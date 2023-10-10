@@ -1,0 +1,129 @@
+/* Adjust left and right padding of the navbar */
+.navbar {
+    padding-left: 20px; /* Increase or decrease as needed */
+    padding-right: 20px; /* Increase or decrease as needed */
+}
+
+/* Increase the height of the navbar */
+.navbar {
+    height: 80px; /* Adjust the value as needed */
+}
+
+/* Style the .navbar-brand with a fancy font-family and other styles */
+.navbar-brand {
+    font-family: 'ClimbersLog', cursive; /* Replace 'Your Fancy Font' with the actual font name */
+    font-size: 24px; /* Adjust the font size as needed */
+
+    /* You can add more styles like color, text-shadow, etc. */
+}
+
+/* Style the "active" navigation link (current page) */
+.nav-link.active {
+    font-weight: bold; /* Make it bold */
+    /* Add any other styles you want for the active link */
+}
+
+@media (max-width: 768px) {
+    /* Reduce padding and font size for smaller screens */
+    .navbar-nav .nav-item .dropdown-menu {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    /* Center-align dropdown menu items */
+    .navbar-nav .nav-item .dropdown-menu a {
+        text-align: center;
+    }
+}
+
+/* Style the form container */
+form {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the select element */
+select {
+    width: 25%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Style the button */
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the button on hover */
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.gyms-table {
+    margin: 0 auto; /* Center the table horizontally */
+    border-collapse: collapse; /* Remove spacing between table cells */
+    width: 80%; /* Adjust the table width as needed */
+}
+
+.gyms-table th,
+.gyms-table td {
+    padding: 10px; /* Add padding to table cells for spacing */
+    text-align: center; /* Center-align text in cells */
+    border: 1px solid #ccc; /* Add borders to table cells */
+}
+
+.gyms-table th {
+    background-color: #f2f2f2; /* Header background color */
+    font-weight: bold; /* Bold header text */
+}
+
+.gyms-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row background color */
+}
+
+
+.circle-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.circle-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+
+.kpi{
+    font-weight: bold;
+}
+
+
+a.no-underline {
+    text-decoration: none; /* Remove the underline */
+    color: inherit; /* Inherit the text color from the parent element */
+    transition: color 0.3s, font-weight 0.3s; /* Add smooth transitions for color and font-weight */
+}
+
+a.no-underline:hover {
+    color: #aa0000; /* Change to a darker red color on hover */
+    font-weight: 600; /* Adjust the font-weight for a smoother transition */
+}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <h2>Gyms in {{ selected_city }}</h2>
+    <table class="gyms-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Levels</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for gym in gyms %}
+                <tr>
+                    <td>{{ gym['name'] }}</td>
+                    <td>{{ gym['city'] }}</td>
+                    <td>{{ gym['levels'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h2>KPI History</h2>
+    <!-- Display the plot image -->
+    <img src="{{ url_for('static', filename='kpi_plot.png') }}" alt="KPI History" width="800">
+
+{% endblock %}
