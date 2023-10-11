@@ -8,7 +8,7 @@ import uuid
 import re
 from cs50 import SQL
 
-from flask import redirect, render_template, session
+from flask import redirect, render_template, session, url_for
 from functools import wraps
 
 # Configure CS50 Library to use SQLite database

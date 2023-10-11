@@ -9,6 +9,12 @@
     height: 80px; /* Adjust the value as needed */
 }
 
+.navbar-collapse {
+    background-color: white;
+    text-align: center;
+    max-width: 150px;
+}
+
 /* Style the .navbar-brand with a fancy font-family and other styles */
 .navbar-brand {
     font-family: 'ClimbersLog', cursive; /* Replace 'Your Fancy Font' with the actual font name */
@@ -28,7 +34,6 @@
     .navbar-nav .nav-item .dropdown-menu {
         padding: 5px;
         font-size: 14px;
-        background-color: white;
     }
 
     /* Center-align dropdown menu items */
@@ -38,11 +43,6 @@
 
     .kpi {
         font-size: 16px;
-    }
-
-    .table th,
-    .table td {
-        padding: 5px;
     }
 }
 
@@ -136,4 +136,11 @@ a.no-underline {
 a.no-underline:hover {
     color: #aa0000; /* Change to a darker red color on hover */
     font-weight: 600; /* Adjust the font-weight for a smoother transition */
+}
+
+/* Add styles for responsive images on smaller screens */
+.img-responsive {
+    max-width: 100%; /* Ensure the image doesn't exceed the width of the container */
+    display: block; /* Center-align the image within its container */
+    margin: 0 auto; /* Center-align the image within its container */
 }

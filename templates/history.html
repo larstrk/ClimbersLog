@@ -5,8 +5,13 @@
 {% endblock %}
 
 {% block main %}
+    <!-- Display the dynamic plot image -->
     <h2>KPI History</h2>
-    <!-- Display the plot image -->
-    <img src="{{ url_for('static', filename='kpi_plot.png') }}" alt="KPI History" width="800">
+    
+    <!-- Make the image clickable with an anchor tag -->
+    <a href="data:image/png;base64, {{ img_data }}" target="_blank">
+        <img src="data:image/png;base64, {{ img_data }}" alt="KPI History" class="img-responsive">
+    </a>
 
+    
 {% endblock %}

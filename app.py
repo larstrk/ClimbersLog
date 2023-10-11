@@ -1,12 +1,19 @@
 import os
 import matplotlib.pyplot as plt
+import base64
 
 
 from cs50 import SQL
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, flash, redirect, render_template, request, session, url_for
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import apology, login_required, is_strong_password, get_username, calculate_weighted_kpi, convert_to_int
+
+from io import BytesIO
+from datetime import datetime
+
+# Initialize Matplotlib in the main thread
+plt.switch_backend('agg')
 
 # from helpers import apology, login_required, is_strong_password
 
@@ -24,6 +31,8 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///climberslog.db")
+
+# Initialize Matplotlib in the main thread
 
 @app.after_request
 def after_request(response):
@@ -158,17 +167,18 @@ def addsession():
 
 
 
-@app.route("/history", methods=["GET", "POST"])
+@app.route("/history", methods=["GET"])
 @login_required
 def history():
+    
     # Get the user's name from the database based on their session
     user_username = get_username(session)
 
     # Retrieve KPI data from the database (modify this query as needed)
     kpi_data = db.execute("SELECT date, kpi FROM sessions WHERE user_id = :user_id", user_id=session["user_id"])
 
-    # Extract dates and KPI values from the query result
-    dates = [entry["date"] for entry in kpi_data]
+    # Extract dates and KPI values from the query result, and convert dates to datetime objects
+    dates = [datetime.strptime(entry["date"], "%Y-%m-%d") for entry in kpi_data]
     kpi_values = [entry["kpi"] for entry in kpi_data]
 
     # Create a plot
@@ -176,15 +186,20 @@ def history():
     plt.plot(dates, kpi_values, marker='o', linestyle='-')
     plt.xlabel("Date")
     plt.ylabel("KPI")
-    #plt.title("KPI History")
     # Customize the grid
     plt.grid(True, axis='y')  # Show horizontal grid lines only for the y-axis
     plt.grid(False, axis='x')  # Hide vertical grid lines for the x-axis
 
-    # Save the plot as an image (optional)
-    plt.savefig("static/kpi_plot.png")  # You can save the plot as a static image
+    # Save the plot as an image in memory
+    img_buf = BytesIO()
+    plt.savefig(img_buf, format='png')
+    img_buf.seek(0)
 
-    return render_template("history.html", user_username=user_username)
+    # Encode the image to base64 for embedding in the HTML
+    img_data = base64.b64encode(img_buf.read()).decode()
+
+    return render_template("history.html", user_username=user_username, img_data=img_data)
+    
 
 
 @app.route("/register", methods=["GET", "POST"])
