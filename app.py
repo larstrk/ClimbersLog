@@ -19,6 +19,8 @@ plt.switch_backend('agg')
 
 # Configure application
 app = Flask(__name__)
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=5000)
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
