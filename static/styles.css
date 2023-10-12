@@ -1,16 +1,12 @@
 /* Adjust left and right padding of the navbar */
 .navbar {
-    padding-left: 20px; /* Increase or decrease as needed */
-    padding-right: 20px; /* Increase or decrease as needed */
-    height: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
     background-color: transparent; /* Background color for desktop */
-    text-align: center; /* Center-align text for desktop */
 }
 
 .navbar-collapse {
-    background-color: white;
     text-align: center;
-    max-width: 150px;
 }
 
 /* Style the .navbar-brand with a fancy font-family and other styles */
