@@ -101,6 +101,7 @@ google-resumable-media @ file:///tmp/build/80754af9/google-resumable-media_16243
 googleapis-common-protos @ file:///opt/concourse/worker/volumes/live/dd3b9afd-2018-4302-7f5c-9afc1cc3e2ad/volume/googleapis-common-protos-feedstock_1617957631674/work
 greenlet @ file:///opt/concourse/worker/volumes/live/b27b4e9e-4697-4d57-403b-f82d36a391ca/volume/greenlet_1628888146890/work
 grpcio @ file:///Users/builder/miniconda3/envs/prefect/conda-bld/grpcio_1637592347008/work
+gunicorn==21.2.0
 h5py @ file:///opt/concourse/worker/volumes/live/6c9dfd5c-4d68-462d-7e1b-a36d4aa040f7/volume/h5py_1637138906246/work
 HeapDict @ file:///Users/ktietz/demo/mc3/conda-bld/heapdict_1630598515714/work
 holoviews @ file:///opt/conda/conda-bld/holoviews_1645454331194/work
